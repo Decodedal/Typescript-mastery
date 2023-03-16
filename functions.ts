@@ -15,3 +15,8 @@ const typeSquare = (num : number) =>{
 }
 
 typeSquare(5)
+
+const greeting = (name: string) =>{
+    const newName = name.charAt(0).toUpperCase().concat(name.slice(1))
+    return `Hello ${newName}`
+}
