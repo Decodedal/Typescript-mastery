@@ -87,3 +87,36 @@ const myPoint : Point = {
 }
 
 console.log(doublePoint(myPoint))
+
+//function with a nested object paramater
+
+type Song = {
+    title: string;
+    artist: string;
+    numStreams: number;
+    credits:{
+        producer: string;
+        writer: string;
+    }
+}
+
+function calculatePayout(mySong: Song):number{
+   return mySong.numStreams * 0.0033
+}
+
+function printSong(song:Song):void{
+    console.log(`${song.title} - ${song.artist}`)
+}
+
+const input : Song = {
+    title: "unchained Melody",
+    artist:"Dally bros",
+    numStreams:1232312,
+    credits:{
+        producer:"phill spector",
+        writer:"Alex north"
+    }
+}
+
+console.log(calculatePayout(input));
+printSong(input);

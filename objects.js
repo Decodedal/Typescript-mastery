@@ -45,3 +45,20 @@ var myPoint = {
     y: 8
 };
 console.log(doublePoint(myPoint));
+function calculatePayout(mySong) {
+    return mySong.numStreams * 0.0033;
+}
+function printSong(song) {
+    console.log("".concat(song.title, " - ").concat(song.artist));
+}
+var input = {
+    title: "unchained Melody",
+    artist: "Dally bros",
+    numStreams: 1232312,
+    credits: {
+        producer: "phill spector",
+        writer: "Alex north"
+    }
+};
+console.log(calculatePayout(input));
+printSong(input);
