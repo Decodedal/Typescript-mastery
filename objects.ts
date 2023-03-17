@@ -5,16 +5,16 @@ const dog = {
 }
 
 //by adding they type to the paramater object you can tell the function what to expect the objects types to be. 
-function printName(name:{first:string , last:string}) : string{
-    return `Hello ${name.first},${name.last}`
-}
+// function printName(name:{first:string , last:string}) : string{
+//     return `Hello ${name.first},${name.last}`
+// }
 
-const myName = {
-    first:"Dallas",
-    last:"Palumbo"
-}
+// const myName = {
+//     first:"Dallas",
+//     last:"Palumbo"
+// }
 
-console.log(printName(myName))
+// console.log(printName(myName))
 
 
 type Point = {
@@ -120,3 +120,61 @@ const input : Song = {
 
 console.log(calculatePayout(input));
 printSong(input);
+
+//optional types 
+//when you define the shape of an object it has to meet all of the set requierments 
+//but if you add in a ? as in key ?: type; you are basicly saying to type script you can take it or leave it.
+
+type SongPrefrence = {
+    favorate : string;
+    mostHated : string;
+    guiltyPleasure ?: string;
+}
+
+const printSongPrefrences = (songList : SongPrefrence) : void => {
+    console.table(songList)
+}
+
+const dallasSongList : SongPrefrence = {
+    favorate:"Down with the Sickness",
+    mostHated:"Anything Country",
+    guiltyPleasure:"creep"
+}
+
+printSongPrefrences(dallasSongList);
+
+//Read Only is a typescript only layer that prevents you from altering an object property after it is initialized
+
+type User = {
+    readonly id : number;
+    userName: string
+}
+
+const user1 : User = {
+    id:1,
+    userName:"KittyMan99"
+} 
+
+user1.userName = "newName good";
+user1.id = 2;
+
+//Intersection types We can combine already declared types together into new types with &
+
+type Circle = {
+    radius: number;
+}
+
+type Color = {
+    color :string;
+}
+
+//add another apersand to add even more types
+type ColorfulCirle = Circle & Color & {
+    happy : boolean;
+};
+
+const happyFace : ColorfulCirle = {
+    radius:11,
+    color:"yellow",
+    happy: true
+};

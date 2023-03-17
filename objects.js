@@ -3,15 +3,6 @@ var dog = {
     breed: "mutt",
     age: 13
 };
-//by adding they type to the paramater object you can tell the function what to expect the objects types to be. 
-function printName(name) {
-    return "Hello ".concat(name.first, ",").concat(name.last);
-}
-var myName = {
-    first: "Dallas",
-    last: "Palumbo"
-};
-console.log(printName(myName));
 //This is what it looks like to define an objects types and then the object. 
 var coordinate = {
     x: 33,
@@ -62,3 +53,12 @@ var input = {
 };
 console.log(calculatePayout(input));
 printSong(input);
+var printSongPrefrences = function (songList) {
+    console.table(songList);
+};
+var dallasSongList = {
+    favorate: "Down with the Sickness",
+    mostHated: "Anything Country",
+    guiltyPleasure: "creep"
+};
+printSongPrefrences(dallasSongList);
