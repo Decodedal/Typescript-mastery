@@ -17,10 +17,21 @@ const errorRes : HTTPResponse = [400, "Error Bad Gatway"]
 //does not exist in js
 
 enum Direction {
-    Up,
-    Down,
-    Left,
-    Right
+    Up =   "up",
+    Down = "down",
+    Left = "left",
+    Right = "right"
 }
 
 const moveLeft = Direction.Left;
+
+//enum addes code in js if you want to avoid alot of extra js code 
+//add const in front of the enum decleration 
+
+const enum Test{
+    pass,
+    fail,
+    retake
+}
+
+console.log(Test.retake)
