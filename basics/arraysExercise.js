@@ -1,14 +1,15 @@
+"use strict";
 // **********************************************
 // ******************* PART 1 *******************
 // **********************************************
 // Create an empty array of numbers called "ages":
-var ages = [];
+const ages = [];
 // **********************************************
 // ******************* PART 2 *******************
 // **********************************************
 // Create an array variable called gameBoard that starts as an empty array.
 // It should be typed to hold a 2 dimensional array of strings
-var gameBoard = [];
+const gameBoard = [];
 // **********************************************
 // ******************* PART 4 *******************
 // **********************************************
@@ -20,7 +21,7 @@ function getTotal(productList) {
     //     sum += item.price;
     // };
     // return sum;
-    return productList.reduce(function (a, b) { return a + b.price; }, 0);
+    return productList.reduce((a, b) => a + b.price, 0);
 }
 ;
 console.log(getTotal([{ name: "doll", price: 33 }, { name: "blocks", price: 55 }, { name: "drums", price: 650 }]));
