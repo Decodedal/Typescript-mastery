@@ -1,18 +1,17 @@
-import React from 'react'
-
-interface Item{
-    id:number,
-    product:string,
-    quantity:number
-}
+import React, {useState} from 'react'
+import Item from '../models/item'
 
 interface ShoppingListProps{
-    items:Item[]
+    items:Item[] 
 }
 
 const ShoppingList = (props : ShoppingListProps): JSX.Element => {
 
+const [clicked, setClicked] = useState<Boolean>(false)
 
+const handleClick = () :void =>{
+    setClicked(!clicked)
+}
 
   return (
     <div>
@@ -20,9 +19,15 @@ const ShoppingList = (props : ShoppingListProps): JSX.Element => {
         <ul>
             {
                 props.items.map((item, key) =>{
+                    if(clicked){
+                        return(
+                            <li onClick={() => handleClick()} key={key}>{item.product} - quantity:{item.quantity} - id:{item.id}</li>
+                        ) 
+                    }else{
                     return(
-                        <li key={key}>{item.product} - {item.quantity}</li>
+                        <li onClick={() => handleClick()} key={key}>{item.product} - {item.quantity}</li>
                     )
+                    }
                 })
             }
         </ul>
