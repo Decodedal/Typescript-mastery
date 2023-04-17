@@ -15,4 +15,16 @@ console.log(getRandomElement<string>(["dallas", "cody", "lynn"]))
 
 //So in effect the genaric allows you to enter in the correct types depending on what input you will provide
 
-console.log(getRandomElement<string|number|boolean>(arrInput))
+//console.log(getRandomElement(arrInput))
+
+
+//you can pass two generics here since each input could be another type 
+//extends object says this has to be something that is an object 
+function merge<T extends object, U extends object>(obj1:T, obj2:U){
+    return{
+        ...obj1,
+        ...obj2
+    }
+}
+
+console.log(merge({1:"Dallas"},{"Dallas":[1,2,3,4]}))
